@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IOMinds.ai — Where young minds build tomorrow's tech</title>
+<meta name="description" content="Hands-on AI & IoT training for ages 6–15. Three levels — Alpha, Beta, Pro. Every child leaves with a working device they built themselves.">
+<meta name="keywords" content="AI for kids, IoT for kids, STEM education, coding for children, robotics classes, ESP32, Arduino, machine learning for kids, hands-on tech education, IOMinds, Indore STEM">
+<meta name="author" content="IOMinds.ai">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#241A38">
+<link rel="canonical" href="https://ankitsaral-git.github.io/iominds/">
+
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IOMinds.ai">
+<meta property="og:url" content="https://ankitsaral-git.github.io/iominds/">
+<meta property="og:title" content="IOMinds.ai — Where young minds build tomorrow's tech">
+<meta property="og:description" content="Hands-on AI & IoT training for ages 6–15. Three levels — Alpha, Beta, Pro. Every child leaves with a working device they built themselves.">
+<meta property="og:image" content="https://ankitsaral-git.github.io/iominds/assets/lab-poster.jpg">
+<meta property="og:image:secure_url" content="https://ankitsaral-git.github.io/iominds/assets/lab-poster.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1448">
+<meta property="og:image:height" content="1086">
+<meta property="og:image:alt" content="Young students building AI & IoT projects in an IOMinds live class">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IOMinds.ai — Where young minds build tomorrow's tech">
+<meta name="twitter:description" content="Hands-on AI & IoT training for ages 6–15. Three levels — Alpha, Beta, Pro. Every child leaves with a working device they built themselves.">
+<meta name="twitter:image" content="https://ankitsaral-git.github.io/iominds/assets/lab-poster.jpg">
+<meta name="twitter:image:alt" content="Young students building AI & IoT projects in an IOMinds live class">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "IOMinds.ai",
+  "alternateName": "Internet of Minds",
+  "url": "https://ankitsaral-git.github.io/iominds/",
+  "logo": "https://ankitsaral-git.github.io/iominds/assets/logo-dark.png",
+  "image": "https://ankitsaral-git.github.io/iominds/assets/lab-poster.jpg",
+  "description": "Hands-on AI & IoT training for ages 6–15. Three levels — Alpha, Beta, Pro. Every child leaves with a working device they built themselves.",
+  "email": "hello@iominds.ai",
+  "slogan": "Where young minds build tomorrow's tech",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Indore",
+    "addressRegion": "Madhya Pradesh",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://instagram.com/iominds.ai",
+    "https://youtube.com/@iominds",
+    "https://linkedin.com/company/iominds",
+    "https://facebook.com/iominds.ai"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Courses",
+    "itemListElement": [
+      {
+        "@type": "Course",
+        "name": "Alpha — Junior IoT & AI Engineers",
+        "description": "Basic level for ages 6–9. From a first LED blink to a first trained AI model across three builds kids keep.",
+        "provider": { "@type": "EducationalOrganization", "name": "IOMinds.ai", "url": "https://ankitsaral-git.github.io/iominds/" }
+      },
+      {
+        "@type": "Course",
+        "name": "Beta — Builders",
+        "description": "Medium level for ages 10–12. Real Python, cloud-connected devices and first ML models with mobile dashboards and alerts.",
+        "provider": { "@type": "EducationalOrganization", "name": "IOMinds.ai", "url": "https://ankitsaral-git.github.io/iominds/" }
+      },
+      {
+        "@type": "Course",
+        "name": "Pro — Innovators",
+        "description": "Advanced level for ages 13–15. Full-stack IoT, edge AI, custom PCBs and competition-ready builds.",
+        "provider": { "@type": "EducationalOrganization", "name": "IOMinds.ai", "url": "https://ankitsaral-git.github.io/iominds/" }
+      }
+    ]
+  }
+}
+</script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon-180x180.png">
+<meta name="apple-mobile-web-app-title" content="IOMinds">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --plum:#241A38; --plum-2:#1A1129; --plum-3:#2F2347;
+  --mist:#F5F2FA; --paper:#FCFBFE;
+  --pink:#E8506E; --rose:#FF8FA9; --amber:#F5A623; --cyan:#19C2D8;
+  --slate:#6E6880; --line:#E4DFEF; --line-d:#3B2F55;
+  --disp:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  /* type scale — the only sizes used */
+  --fs-hero:clamp(3rem,10vw,9rem);
+  --fs-h2:clamp(2rem,5vw,4rem);
+  --fs-h3:clamp(1.2rem,2vw,1.55rem);
+  --fs-body:17px; --fs-small:14.5px; --fs-micro:12px;
+  --pad:max(clamp(20px,5.5vw,80px),calc((100vw - 1440px)/2));
+  --sec:clamp(64px,8.5vw,116px);
+  --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::selection{background:var(--pink);color:#fff}
+body{font-family:var(--body);background:var(--mist);color:var(--plum);
+  font-size:var(--fs-body);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{font:inherit;border:none;background:none;cursor:pointer;color:inherit}
+h1,h2,h3,.disp{font-family:var(--disp);font-weight:700;letter-spacing:-.03em;line-height:.98}
+h3{font-size:var(--fs-h3);letter-spacing:-.02em;line-height:1.15}
+.mono{font-family:var(--mono);font-size:var(--fs-micro);letter-spacing:.01em}
+p{max-width:60ch}
+
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2000;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============ CURSOR ============ */
+.cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:3000;border-radius:50%;
+  transform:translate(-50%,-50%);display:none}
+@media(pointer:fine){.cur-dot{display:block}.cur-ring{display:flex}}
+.cur-dot{width:8px;height:8px;background:var(--pink)}
+.cur-ring{width:36px;height:36px;border:1.5px solid var(--pink);align-items:center;justify-content:center;
+  transition:width .25s,height .25s,background .25s,border-color .25s}
+.cur-ring span{font-family:var(--mono);font-size:10px;color:#fff;opacity:0;transition:opacity .2s}
+body.cur-hover .cur-ring{width:62px;height:62px;background:rgba(232,80,110,.9);border-color:transparent}
+body.cur-hover .cur-ring span{opacity:1}
+@media(pointer:fine){html,body,a,button,summary{cursor:none}}
+
+/* ============ PRELOADER ============ */
+#loader{position:fixed;inset:0;z-index:2500;background:var(--plum-2);color:var(--mist);
+  display:flex;align-items:center;justify-content:center;
+  transition:clip-path .85s cubic-bezier(.77,0,.18,1);clip-path:inset(0)}
+#loader.done{clip-path:inset(0 0 100% 0)}
+#loader .stack{overflow:hidden;height:clamp(60px,12vw,120px)}
+#loader .roll{display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.77,0,.18,1)}
+#loader .roll div{height:clamp(60px,12vw,120px);display:flex;align-items:center;justify-content:center;
+  font-family:var(--disp);font-weight:700;font-size:clamp(40px,8vw,88px);letter-spacing:-.04em}
+#loader .roll div:last-child{color:var(--pink)}
+#loader .num{position:absolute;right:var(--pad);bottom:32px;font-family:var(--mono);font-size:14px;color:var(--pink)}
+#loader .tg{position:absolute;left:var(--pad);bottom:32px;font-family:var(--mono);font-size:12px;color:#8F84AC}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--pad);color:var(--mist);transition:background .35s,box-shadow .35s,color .35s}
+nav.solid{background:rgba(252,251,254,.9);backdrop-filter:blur(14px);color:var(--plum);box-shadow:0 1px 0 var(--line)}
+nav.solid.on-dark{background:rgba(26,17,41,.86);color:var(--mist);box-shadow:0 1px 0 var(--line-d)}
+nav .logo{display:flex;align-items:center;gap:10px}
+nav .logo img{height:38px}
+nav .logo .wm{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.02em;line-height:1;display:block}
+nav .logo .wm b{color:var(--pink)}
+nav .logo .tg{font-family:var(--mono);font-size:9px;opacity:.65;display:block;margin-top:2px}
+nav .links{display:flex;gap:26px;font-size:var(--fs-small);font-weight:700}
+.rlink{display:inline-block;overflow:hidden;height:1.45em;line-height:1.45em}
+.rlink .rt{display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.77,0,.18,1)}
+.rlink:hover .rt{transform:translateY(-1.45em)}
+.rlink .rt span{height:1.45em}
+.rlink .rt span:last-child{color:var(--pink)}
+.btn{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--pink);color:#fff;
+  font-family:var(--mono);font-size:13px;font-weight:700;padding:13px 24px;border-radius:999px;
+  overflow:hidden;isolation:isolate;transition:color .3s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--plum-3);border-radius:inherit;
+  transform:translateY(101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:-1}
+.btn:hover::before{transform:translateY(0)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+.btn.ghost::before{background:var(--pink)}
+.btn.ghost:hover{color:#fff;border-color:var(--pink)}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px}
+.burger span{width:26px;height:2px;background:currentColor;transition:.3s}
+
+/* ============ HERO ============ */
+header{position:relative;min-height:100svh;color:var(--mist);
+  background:linear-gradient(rgba(26,17,41,.88),rgba(26,17,41,.94)),
+             url('assets/lab-bright.jpg') center 30%/cover no-repeat var(--plum-2);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:110px var(--pad) 0;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(90px);opacity:.5}
+.glow.g1{width:46vw;height:46vw;background:radial-gradient(circle,#E8506E55,transparent 65%);top:-12vw;right:-10vw}
+.glow.g2{width:34vw;height:34vw;background:radial-gradient(circle,#19C2D833,transparent 65%);bottom:6vw;left:-12vw}
+.hero-in{position:relative;z-index:2}
+.kicker{display:inline-flex;align-items:center;gap:11px;font-family:var(--mono);font-size:clamp(11px,1.2vw,13px);
+  color:var(--rose);margin-bottom:26px;border:1px solid var(--line-d);border-radius:999px;
+  padding:8px 17px;background:rgba(36,26,56,.55)}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:blink 1.8s infinite}
+@keyframes blink{50%{opacity:.25}}
+.hero-h{font-size:var(--fs-hero);line-height:.9;letter-spacing:-.045em;max-width:11ch;text-wrap:balance}
+.hero-h .ln{display:block;overflow:hidden;padding-bottom:.05em}
+.hero-h .ch{display:inline-block;transform:translateY(115%) rotate(5deg);transition:transform .8s cubic-bezier(.19,1,.22,1)}
+body.ready .hero-h .ch{transform:none}
+.hero-h .pink{color:var(--pink)}
+.hero-h .hollow{color:transparent;-webkit-text-stroke:2px var(--mist)}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:26px;
+  margin-top:38px;padding-bottom:52px}
+.hero-foot p{max-width:42ch;color:#B9AFD2;font-size:clamp(15px,1.5vw,18px);line-height:1.5}
+.hero-foot p b{color:var(--mist)}
+.hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+.hero-owl{position:absolute;z-index:2;right:clamp(14px,7vw,110px);top:clamp(92px,15vh,164px);
+  width:clamp(92px,14vw,196px);filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));will-change:transform}
+.scrolldown{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;
+  font-family:var(--mono);font-size:11px;color:#8F84AC;display:flex;flex-direction:column;align-items:center;gap:7px}
+.scrolldown::after{content:"";width:1px;height:32px;background:var(--pink);animation:drip 1.7s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
+51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ MARQUEE ============ */
+.marq{overflow:hidden;white-space:nowrap;padding:15px 0;background:var(--pink);color:#fff;
+  transform:rotate(-1.2deg) scale(1.02);margin-top:-12px;position:relative;z-index:3}
+.marq .track{display:inline-flex;animation:mx 26s linear infinite}
+.marq span{font-family:var(--disp);font-weight:700;font-size:clamp(16px,2.2vw,25px);
+  text-transform:uppercase;padding:0 16px}
+.marq .o{color:var(--plum-2)}
+@keyframes mx{to{transform:translateX(-50%)}}
+
+/* ============ SECTION SHELL ============ */
+section{padding:var(--sec) var(--pad);position:relative}
+.shead{display:grid;grid-template-columns:minmax(150px,.32fr) 1fr;gap:clamp(20px,4vw,70px);
+  align-items:start;border-bottom:1px solid var(--line);
+  padding-bottom:clamp(26px,4vw,52px);margin-bottom:clamp(30px,5vw,60px)}
+.dark .shead{border-color:var(--line-d)}
+.kick{font-family:var(--mono);font-size:var(--fs-micro);font-weight:700;color:var(--pink);
+  padding-top:.7em;letter-spacing:.02em}
+.kick i{font-style:normal;color:var(--slate);font-weight:400;display:block;margin-top:5px}
+.sec-h{font-size:var(--fs-h2);text-wrap:balance;max-width:20ch}
+.lead{font-size:clamp(15px,1.5vw,17.5px);color:var(--slate);max-width:54ch;margin-top:16px;line-height:1.55}
+.dark{background:var(--plum);color:var(--mist)}
+.dark .sec-h{color:var(--mist)}
+.dark .lead{color:#B9AFD2}
+.dark .kick i{color:#8F84AC}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.19,1,.22,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* spinning orbit (template-inspired) */
+.orbit{position:absolute;right:-12vw;top:8%;width:46vw;aspect-ratio:1;border:1px solid var(--line-d);
+  border-radius:50%;opacity:.6;animation:spin 22s linear infinite;pointer-events:none}
+.orbit::before,.orbit::after{content:"";position:absolute;border-radius:50%}
+.orbit::before{width:18px;height:18px;left:9%;top:22%;background:var(--pink);box-shadow:0 0 50px var(--pink)}
+.orbit::after{width:11px;height:11px;right:16%;bottom:12%;background:var(--cyan);box-shadow:0 0 50px var(--cyan)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ============ ABOUT ============ */
+#about{background:var(--mist);overflow:hidden}
+.about-banner{position:relative;border-radius:28px;overflow:hidden;
+  min-height:clamp(300px,42vw,500px);
+  background:var(--plum-2) url('assets/lab-online.jpg') center/cover no-repeat;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(24px,4vw,60px);margin-bottom:clamp(36px,5vw,64px);
+  box-shadow:0 44px 90px -44px rgba(26,17,41,.65)}
+.about-banner::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(26,17,41,.92) 0%,rgba(26,17,41,.74) 48%,rgba(26,17,41,.14) 80%)}
+.about-banner .kick-b{position:relative;font-family:var(--mono);font-size:var(--fs-micro);
+  font-weight:600;color:var(--rose);margin-bottom:18px;letter-spacing:.02em}
+.about-banner .kick-b i{font-style:normal;color:#B9AFD2}
+.banner-h{position:relative;font-size:clamp(2.2rem,5.4vw,4.5rem);color:var(--mist);
+  line-height:1.04;max-width:14ch;text-wrap:balance}
+.banner-h span{color:transparent;background:linear-gradient(92deg,var(--pink) 10%,var(--amber) 90%);
+  -webkit-background-clip:text;background-clip:text}
+.about-art{position:absolute;right:calc(var(--pad) * .4);bottom:-20px;width:min(58vw,760px);
+  opacity:.14;pointer-events:none;z-index:0}
+.about-art .pk{stroke:var(--pink);opacity:.9}
+.about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(36px,5vw,80px);align-items:start;
+  position:relative;z-index:1}
+.believe{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.55rem);
+  line-height:1.25;letter-spacing:-.02em;max-width:20ch}
+.believe .w{color:#CFC8E0;transition:color .45s}
+.believe .w.lit{color:var(--plum)}
+.believe .w.hi.lit{color:var(--pink)}
+.about-side p{color:#4A4460;margin-bottom:16px;font-size:16.5px;line-height:1.75}
+.about-side p b{color:var(--plum);font-weight:600}
+.owl-note{display:flex;align-items:center;gap:14px;margin-top:20px;background:#fff;
+  border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;
+  box-shadow:0 14px 40px -18px rgba(36,26,56,.25)}
+.owl-note img{width:46px}
+.owl-note span{font-size:14px;line-height:1.6;color:#4A4460}
+.owl-note b{color:var(--pink);font-weight:600}
+
+/* ============ LOOP — hover rows ============ */
+#loop{overflow:hidden}
+.loop-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:center;position:relative;z-index:1}
+.loop-svg{width:100%;height:auto}
+.loop-svg .wire{fill:none;stroke:var(--pink);stroke-width:2.5;stroke-dasharray:1000;stroke-dashoffset:1000}
+.loop-svg.drawn .wire{animation:draw 2.2s ease forwards}
+.loop-svg .wire.d2{animation-delay:.45s}.loop-svg .wire.d3{animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.loop-svg .node{fill:var(--plum-3);stroke:#4A3C6B;stroke-width:1.5}
+.loop-svg text{font-family:var(--mono);fill:#CFC8E0;font-size:13px}
+.loop-svg .lbl{fill:var(--rose);font-weight:700;font-size:15px}
+.loop-svg .cy{fill:var(--cyan)}
+.rows{border-bottom:1px solid var(--line-d)}
+.row-i{display:grid;grid-template-columns:58px 1fr 44px;gap:16px;align-items:center;
+  border-top:1px solid var(--line-d);padding:20px 0;transition:background .25s,padding .25s}
+.row-i:hover{background:rgba(255,255,255,.045);padding-inline:16px}
+.row-i .n{font-family:var(--mono);color:var(--cyan);font-size:13px}
+.row-i h3{color:var(--mist);margin-bottom:4px}
+.row-i p{color:#B9AFD2;font-size:var(--fs-small);max-width:46ch;line-height:1.5}
+.row-i b{color:var(--mist)}
+.row-i code{font-family:var(--mono);color:var(--rose);font-size:.92em}
+.row-i .ar{width:40px;height:40px;border:1px solid var(--line-d);border-radius:999px;
+  display:grid;place-items:center;color:var(--rose);transition:background .25s,transform .25s}
+.row-i:hover .ar{background:var(--pink);color:#fff;transform:rotate(45deg)}
+
+/* ============ COURSES ============ */
+#courses{background:var(--mist)}
+.courses-hero{position:relative;isolation:isolate;border-radius:34px;overflow:hidden;
+  padding:clamp(40px,5.5vw,84px) clamp(26px,4.5vw,80px) clamp(30px,3.5vw,52px);
+  margin-bottom:clamp(36px,5vw,64px);
+  background:
+    radial-gradient(circle at 18% 14%,rgba(232,80,110,.15),transparent 32%),
+    radial-gradient(circle at 82% 6%,rgba(123,92,255,.16),transparent 30%),
+    linear-gradient(135deg,#FFFAFF 0%,#F6F2FE 42%,#FFF7FA 100%)}
+.courses-hero::before{content:"";position:absolute;inset:16px;border:1px solid rgba(36,26,56,.09);
+  border-radius:24px;pointer-events:none;z-index:-1}
+.courses-hero::after{content:"";position:absolute;width:52vw;height:52vw;right:-26vw;bottom:-36vw;
+  border-radius:50%;opacity:.7;z-index:-1;
+  background:repeating-linear-gradient(135deg,rgba(232,80,110,.09) 0 2px,transparent 2px 20px)}
+.course-shell{display:grid;grid-template-columns:minmax(180px,.4fr) 1fr;
+  gap:clamp(30px,5.5vw,100px);align-items:center}
+.kicker-wrap{align-self:start;padding-top:clamp(6px,1vw,18px)}
+.kicker2{display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;color:var(--pink);
+  font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.kicker2::after{content:"";width:36px;height:2px;background:currentColor;border-radius:999px}
+.side-note{max-width:250px;color:var(--slate);font-family:var(--disp);font-weight:500;
+  font-size:16.5px;line-height:1.55;letter-spacing:.01em}
+.eyebrow-pill{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:9px 16px;
+  border:1px solid rgba(232,80,110,.2);border-radius:999px;color:var(--pink-d,#D13A63);
+  background:rgba(255,255,255,.66);box-shadow:0 12px 34px rgba(232,80,110,.08);
+  font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);
+  box-shadow:0 0 0 6px rgba(232,80,110,.12)}
+.courses-h{font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.96;letter-spacing:-.045em;
+  color:var(--plum);text-wrap:balance;max-width:none}
+.accent-path{display:inline-flex;align-items:center;gap:clamp(14px,1.8vw,30px);
+  white-space:nowrap;color:var(--pink)}
+.arrow{position:relative;display:inline-block;width:clamp(62px,5.6vw,106px);height:.11em;
+  background:var(--pink);border-radius:999px;transform:translateY(-.04em)}
+.arrow::after{content:"";position:absolute;top:50%;right:-2px;width:.32em;height:.32em;
+  border-top:.11em solid var(--pink);border-right:.11em solid var(--pink);
+  transform:translateY(-50%) rotate(45deg)}
+.infinity{font-weight:700;letter-spacing:-.08em;transform:translateY(-.01em)}
+.lead2{max-width:680px;margin-top:26px;color:var(--slate);
+  font-size:clamp(16.5px,1.5vw,21px);line-height:1.5;font-weight:500;letter-spacing:-.015em}
+.track-bar{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:24px;margin-top:clamp(38px,5vw,64px);color:var(--pink)}
+.track-bar::before,.track-bar::after{content:"";height:1px;
+  background:linear-gradient(90deg,transparent,rgba(36,26,56,.16))}
+.track-bar::after{background:linear-gradient(90deg,rgba(36,26,56,.16),transparent)}
+.pulse{position:relative;display:grid;place-items:center;width:50px;height:50px;
+  border:2px solid var(--pink);border-radius:50%;background:rgba(255,255,255,.66);
+  box-shadow:0 16px 45px rgba(232,80,110,.18)}
+.pulse::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--pink);
+  animation:ping 1.8s infinite ease-out}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(232,80,110,.36)}
+  70%{box-shadow:0 0 0 13px rgba(232,80,110,0)}100%{box-shadow:0 0 0 0 rgba(232,80,110,0)}}
+.floating-card{position:absolute;right:clamp(28px,5vw,90px);bottom:clamp(24px,4vw,56px);
+  display:flex;gap:12px;align-items:center;padding:13px 17px;border-radius:20px;
+  border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.7);
+  backdrop-filter:blur(16px);box-shadow:0 30px 80px rgba(36,26,56,.14);
+  color:var(--plum);font-weight:700;font-size:13.5px;letter-spacing:-.01em}
+.floating-card span:first-child{display:grid;place-items:center;width:32px;height:32px;
+  border-radius:11px;color:#fff;background:linear-gradient(135deg,var(--pink),#7B5CFF)}
+.stack-zone{display:flex;flex-direction:column;gap:28px}
+.ccard{position:sticky;top:104px;background:var(--paper);border:1px solid var(--line);border-radius:26px;
+  padding:clamp(24px,3.6vw,46px);box-shadow:0 30px 60px -30px rgba(36,26,56,.35);
+  display:grid;grid-template-columns:1fr 1.55fr;gap:clamp(24px,3.6vw,56px);overflow:hidden}
+.ccard:nth-child(2){top:122px}.ccard:nth-child(3){top:140px}
+.ccard .band{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--ac)}
+.ccard{--ac:var(--pink)}.ccard.beta{--ac:var(--cyan)}.ccard.pro{--ac:var(--amber)}
+.ccard .lv{font-family:var(--mono);font-size:var(--fs-micro);font-weight:700;color:var(--ac);
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:13px}
+.ccard .lv::before{content:"";width:24px;height:2px;background:var(--ac)}
+.ccard h3.title{font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-.04em;line-height:.95;
+  display:flex;align-items:baseline;gap:13px}
+.ccard h3.title .g{font-family:var(--mono);font-size:.38em;color:var(--ac);border:2px solid var(--ac);
+  border-radius:999px;padding:3px 13px;transform:translateY(-5px);letter-spacing:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.chip{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:#fff}
+.chip.hi{background:var(--ac);border-color:var(--ac);color:#fff}
+.ccard .owl{width:clamp(64px,7vw,96px);margin-top:22px;filter:drop-shadow(0 10px 24px rgba(36,26,56,.22))}
+.ccard .body>p{color:var(--slate);margin-bottom:16px;font-size:15px;line-height:1.6;max-width:58ch}
+.ccard .body>p b{color:var(--plum)}
+.ccard dl{display:grid;grid-template-columns:104px 1fr;row-gap:7px;font-size:var(--fs-small);margin-bottom:18px}
+.ccard dt{font-family:var(--mono);font-size:10.5px;color:var(--ac);text-transform:uppercase;letter-spacing:.05em;padding-top:3px}
+.ccard dd{color:var(--plum);line-height:1.5}
+.acts{display:flex;flex-wrap:wrap;gap:13px;align-items:center}
+.pdfbtn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#fff;
+  font-family:var(--mono);font-size:var(--fs-micro);font-weight:700;padding:13px 22px;border-radius:13px;
+  transition:transform .25s,box-shadow .25s;box-shadow:0 12px 26px -12px var(--ac)}
+.pdfbtn:hover{transform:translateY(-3px);box-shadow:0 18px 32px -12px var(--ac)}
+.pdfbtn svg{width:16px;height:16px}
+.enrol{font-family:var(--mono);font-size:var(--fs-micro);font-weight:700;color:var(--plum)}
+.enrol .rt span:last-child{color:var(--ac)}
+details.classes{border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden;margin-bottom:18px}
+details.classes summary{list-style:none;padding:13px 18px;font-family:var(--mono);font-size:var(--fs-micro);
+  font-weight:700;display:flex;justify-content:space-between;align-items:center}
+details.classes summary::-webkit-details-marker{display:none}
+details.classes summary .tg{color:var(--ac);transition:transform .3s;font-size:15px}
+details.classes[open] summary .tg{transform:rotate(45deg)}
+.classes .ph{padding:2px 18px 15px}
+.classes .ph h4{font-family:var(--mono);font-size:10.5px;color:var(--ac);text-transform:uppercase;
+  margin:12px 0 5px;letter-spacing:.06em}
+.classes .ph li{display:grid;grid-template-columns:60px 1fr;gap:11px;padding:7px 0;
+  border-top:1px dashed var(--line);font-size:13.5px;line-height:1.45}
+.classes .ph .cn{font-family:var(--mono);font-size:10.5px;color:var(--slate);padding-top:2px}
+
+/* ============ HOW IT WORKS ============ */
+#howitworks{background:linear-gradient(150deg,#FDEEF2 0%,var(--mist) 55%,#E8F7FA 100%);overflow:hidden}
+#howitworks .blob{position:absolute;width:52vw;height:52vw;border-radius:50%;filter:blur(100px);opacity:.5;
+  background:radial-gradient(circle,#FF8FA966,transparent 65%);top:-18vw;right:-16vw;pointer-events:none}
+.nl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;position:relative}
+.nl-svg{width:100%;height:auto}
+.nl-svg .wire{fill:none;stroke:var(--plum);stroke-width:2;stroke-dasharray:600;stroke-dashoffset:600}
+.nl-svg.drawn .wire{animation:draw 1.9s ease forwards}
+.nl-svg .wire.w2{animation-delay:.55s}
+.nl-svg text{font-family:var(--mono);font-size:12px;fill:var(--plum)}
+.nl-svg .pk{fill:var(--pink)}
+.nl-svg .box{fill:#fff;stroke:var(--plum);stroke-width:2}
+.nl-svg .glowc{fill:var(--amber);opacity:0}
+.nl-svg.drawn .glowc{animation:lightup 3s ease 1.7s infinite}
+@keyframes lightup{0%,30%{opacity:0}55%,80%{opacity:.9}100%{opacity:0}}
+.nl-svg .sun{transform-origin:60px 60px}
+.nl-svg.drawn .sun{animation:dim 3s ease 1.7s infinite}
+@keyframes dim{0%,30%{opacity:1}55%,80%{opacity:.14}100%{opacity:1}}
+.code-card{background:var(--plum-2);color:#E9E3F5;border-radius:17px;padding:22px 24px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.8;margin-top:24px;
+  border:1px solid var(--line-d);box-shadow:0 30px 60px -28px rgba(26,17,41,.55);position:relative}
+.code-card::before{content:"class_3.ino";position:absolute;top:-12px;left:18px;background:var(--pink);
+  color:#fff;font-size:10px;font-weight:700;border-radius:7px;padding:4px 11px}
+.code-card .c{color:#8F84AC}.code-card .k{color:var(--rose)}.code-card .f{color:var(--amber)}
+
+/* ============ KIT ============ */
+#kit{background:var(--paper)}
+.kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kit-cell{background:var(--mist);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px 22px 18px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.kit-cell:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:0 24px 44px -22px rgba(232,80,110,.4)}
+.kit-cell .ico{width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:13px}
+.kit-cell h3{font-size:1.05rem;margin-bottom:5px}
+.kit-cell p{font-size:13.5px;color:var(--slate);line-height:1.5}
+.kit-cell .qty{font-family:var(--mono);font-size:10px;color:var(--pink);margin-top:11px;display:block;letter-spacing:.06em}
+.kit-note{margin-top:26px;display:inline-flex;gap:13px;align-items:center;background:#E2F8FB;
+  border:1px solid #BEEBF1;border-radius:999px;padding:9px 20px 9px 11px;font-family:var(--mono);font-size:12px}
+.kit-note b{color:var(--cyan)}
+.kit-note img{width:36px}
+
+/* ============ LAB PHOTO STRIP ============ */
+#lab{background:var(--paper);padding-top:0}
+.lab-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px);align-items:stretch}
+.snap{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 26px 55px -26px rgba(36,26,56,.45);transition:transform .35s cubic-bezier(.19,1,.22,1)}
+.snap img{width:100%;height:clamp(200px,26vw,330px);object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.19,1,.22,1)}
+.snap:nth-child(1){transform:rotate(-1.6deg)}
+.snap:nth-child(3){transform:rotate(1.6deg)}
+.snap:hover{transform:rotate(0) translateY(-6px)}
+.snap:hover img{transform:scale(1.05)}
+.snap figcaption{position:absolute;left:12px;bottom:12px;background:rgba(26,17,41,.82);
+  color:var(--mist);font-family:var(--mono);font-size:11px;padding:7px 13px;border-radius:999px;
+  backdrop-filter:blur(6px)}
+.snap figcaption b{color:var(--rose);font-weight:600}
+
+/* ============ PROJECTS ============ */
+#projects{background:var(--plum-2);color:var(--mist)}
+.filterbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px}
+.filterbar button{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line-d);border-radius:999px;
+  padding:8px 17px;color:#B9AFD2;transition:.25s}
+.filterbar button.on,.filterbar button:hover{background:var(--pink);border-color:var(--pink);color:#fff}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}
+.proj{border:1px solid var(--line-d);border-radius:var(--r);padding:21px;background:var(--plum-3);
+  transition:transform .3s,border-color .3s;position:relative;overflow:hidden;--tagc:var(--pink)}
+.proj[data-c$="-ai"]{--tagc:var(--cyan)}
+.proj::after{content:"";position:absolute;right:-30%;bottom:-60%;width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle,var(--tagc),transparent 70%);opacity:0;transition:opacity .3s}
+.proj:hover{transform:translateY(-6px);border-color:var(--tagc)}
+.proj:hover::after{opacity:.28}
+.proj .tag{font-family:var(--mono);font-size:10px;color:var(--tagc);text-transform:uppercase;letter-spacing:.08em}
+.proj h3{font-size:1.05rem;margin:9px 0 6px;color:var(--mist)}
+.proj p{font-size:13px;color:#B9AFD2;line-height:1.5}
+.proj.hide{display:none}
+
+/* ============ STATS ============ */
+#stats{background:var(--paper);padding-top:0;padding-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
+.stat{border-right:1px solid var(--line);padding:clamp(34px,4.5vw,56px) clamp(18px,2.4vw,36px)}
+.stat .big{font-family:var(--disp);font-weight:700;font-size:clamp(2.3rem,5vw,3.9rem);
+  letter-spacing:-.04em;color:var(--pink);line-height:1}
+.stat:nth-child(2) .big{color:var(--cyan)}
+.stat:nth-child(4) .big{color:var(--amber)}
+.stat p{font-size:13px;color:var(--slate);margin-top:9px;max-width:23ch;line-height:1.5}
+
+/* ============ CTA ============ */
+#contact{background:linear-gradient(135deg,var(--pink) 0%,#D13A63 60%,#B22B57 100%);color:#fff;overflow:hidden}
+#contact::before{content:"";position:absolute;inset:0;opacity:.13;
+  background-image:radial-gradient(#fff 1.5px,transparent 1.5px);background-size:26px 26px}
+#contact .shead{border-color:rgba(255,255,255,.28)}
+#contact .kick{color:#fff}#contact .kick i{color:#FFC7D4}
+#contact .sec-h{color:#fff;max-width:15ch}
+#contact .lead{color:#FFE0E8}
+#contact .big-owl{position:absolute;right:clamp(-30px,2vw,80px);bottom:-44px;width:clamp(180px,23vw,330px);
+  transform:rotate(-7deg);filter:drop-shadow(0 24px 50px rgba(120,20,45,.5))}
+#contact .row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;position:relative}
+#contact .btn{background:var(--plum-2)}
+#contact .btn::before{background:#fff}
+#contact .btn:hover{color:var(--plum-2)}
+#contact .mono{color:#FFC7D4;margin-top:26px;display:block;position:relative}
+
+/* ============ FOOTER ============ */
+footer{background:var(--plum-2);color:var(--mist);padding:64px var(--pad) 28px}
+.foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:38px;margin-bottom:48px}
+.foot-grid h4{font-family:var(--mono);font-size:11px;color:var(--rose);text-transform:uppercase;
+  margin-bottom:15px;letter-spacing:.09em;font-weight:700}
+.foot-grid li{margin-bottom:9px;font-size:var(--fs-small);color:#B9AFD2}
+.foot-grid li a:hover{color:var(--pink)}
+.foot-logo img{height:48px;margin-bottom:14px}
+.foot-tag{font-family:var(--mono);font-size:12px;color:#8F84AC;line-height:1.85}
+.foot-tag b{color:var(--rose);font-weight:400}
+.giant{font-family:var(--disp);font-weight:700;letter-spacing:-.05em;line-height:.82;
+  font-size:clamp(3.4rem,15.5vw,15rem);color:transparent;-webkit-text-stroke:1.5px #4A3C6B;
+  user-select:none;margin:30px 0 22px;transition:color .5s,-webkit-text-stroke-color .5s}
+.giant:hover{color:var(--pink);-webkit-text-stroke-color:var(--pink)}
+.foot-bottom{border-top:1px solid var(--line-d);padding-top:22px;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11.5px;color:#8F84AC}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .ccard{grid-template-columns:1fr}
+  .about-grid,.loop-wrap,.nl-grid,.shead{grid-template-columns:1fr}
+  .shead{gap:10px}.kick{padding-top:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .kit-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .orbit{width:88vw;opacity:.25}
+}
+@media(max-width:700px){
+  nav .links{display:none}
+  nav .links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:var(--paper);color:var(--plum);padding:24px var(--pad);gap:18px;
+    box-shadow:0 24px 40px rgba(26,17,41,.15)}
+  .burger{display:flex}
+  .kit-grid{grid-template-columns:1fr}
+  .ccard{position:static}
+  .hero-owl{width:84px;top:92px}
+  .row-i{grid-template-columns:44px 1fr}
+  .row-i .ar{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  #loader,.cur-dot,.cur-ring{display:none!important}
+  .reveal,.hero-h .ch{opacity:1;transform:none}
+  .loop-svg .wire,.nl-svg .wire{stroke-dashoffset:0}
+  html,body,a,button{cursor:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="cur-dot" aria-hidden="true"></div>
+<div class="cur-ring" aria-hidden="true"><span>OPEN</span></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="stack"><div class="roll" id="lroll">
+    <div>Sense.</div><div>Think.</div><div>Act.</div><div>IOMinds.</div>
+  </div></div>
+  <div class="tg">&lt;internet of minds&gt;</div>
+  <div class="num" id="lnum">0%</div>
+</div>
+
+<nav id="nav" class="on-dark">
+  <a class="logo" href="#top" data-cur="HOME">
+    <img src="assets/hoot-happy.png" alt="IOMinds owl">
+    <span><span class="wm">IOMinds<b>.ai</b></span><span class="tg">&lt;internet of minds&gt;</span></span>
+  </a>
+  <div class="links" id="navLinks">
+    <a class="rlink" href="#about"><span class="rt"><span>Why IOMinds</span><span>Why IOMinds</span></span></a>
+    <a class="rlink" href="#loop"><span class="rt"><span>How kids learn</span><span>How kids learn</span></span></a>
+    <a class="rlink" href="#courses"><span class="rt"><span>Courses</span><span>Courses</span></span></a>
+    <a class="rlink" href="#kit"><span class="rt"><span>The kit</span><span>The kit</span></span></a>
+    <a class="rlink" href="#projects"><span class="rt"><span>Projects</span><span>Projects</span></span></a>
+  </div>
+  <div style="display:flex;gap:13px;align-items:center">
+    <a class="btn magnetic" href="#contact" data-cur="GO">Book a free trial</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" data-nav="dark">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <img class="hero-owl" id="heroOwl" src="assets/hoot-emotions.gif" alt="IOMinds owl mascot cycling through emotions">
+  <div class="hero-in">
+    <span class="kicker"><span class="dot"></span>&lt;internet of minds&gt; · hands-on AI &amp; IoT · ages 6–15</span>
+    <h1 class="hero-h">
+      <span class="ln" data-split>Build the tech.</span>
+      <span class="ln" data-split><em class="pink" style="font-style:normal">Don't just</em></span>
+      <span class="ln" data-split><span class="hollow">use it.</span></span>
+    </h1>
+    <div class="hero-foot">
+      <p>Every child leaves with something <b>real</b> — a circuit that senses, a model that predicts, a device that responds.</p>
+      <div class="hero-cta">
+        <a class="btn magnetic" href="#courses" data-cur="VIEW">Explore courses</a>
+        <a class="btn ghost magnetic" href="#contact" data-cur="GO">Book a free trial</a>
+      </div>
+    </div>
+  </div>
+  <div class="scrolldown">scroll</div>
+</header>
+
+<div class="marq" aria-hidden="true">
+  <div class="track">
+    <span>Sense</span><span class="o">→</span><span>Think</span><span class="o">→</span><span>Act</span><span class="o">✳</span>
+    <span>Wire it</span><span class="o">→</span><span>Code it</span><span class="o">→</span><span>Train it</span><span class="o">✳</span>
+    <span>Sense</span><span class="o">→</span><span>Think</span><span class="o">→</span><span>Act</span><span class="o">✳</span>
+    <span>Wire it</span><span class="o">→</span><span>Code it</span><span class="o">→</span><span>Train it</span><span class="o">✳</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" data-nav="light">
+  <!-- line-art: two kids at a workbench, laptop, breadboard, robot, plant sensor -->
+  <svg class="about-art" viewBox="0 0 900 420" fill="none" stroke="#241A38" stroke-width="3"
+       stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- workbench -->
+    <line x1="40" y1="330" x2="860" y2="330"/>
+    <line x1="120" y1="330" x2="105" y2="410"/><line x1="780" y1="330" x2="795" y2="410"/>
+    <!-- kid 1 (left, at laptop) -->
+    <circle cx="200" cy="185" r="42"/>
+    <circle cx="186" cy="180" r="11"/><circle cx="212" cy="180" r="11"/><line x1="197" y1="180" x2="201" y2="180"/>
+    <path d="M172 158 Q200 132 228 158"/>
+    <path d="M165 227 Q200 250 235 227 L242 330 H158 Z"/>
+    <path d="M238 250 Q290 262 320 292"/>
+    <!-- laptop -->
+    <path d="M310 292 L470 292 L484 330 H296 Z"/>
+    <rect x="322" y="212" width="136" height="80" rx="8"/>
+    <path class="pk" d="M352 238 l-14 14 14 14 M428 238 l14 14 -14 14 M398 234 l-16 44"/>
+    <!-- breadboard between kids -->
+    <rect x="520" y="296" width="110" height="34" rx="6"/>
+    <line x1="536" y1="306" x2="536" y2="320"/><line x1="556" y1="306" x2="556" y2="320"/>
+    <line x1="576" y1="306" x2="576" y2="320"/><line x1="596" y1="306" x2="596" y2="320"/><line x1="614" y1="306" x2="614" y2="320"/>
+    <!-- wire arcs to robot -->
+    <path class="pk" d="M556 296 C556 240 640 250 660 262"/>
+    <path class="pk" d="M596 296 C600 258 648 268 662 276"/>
+    <!-- small robot -->
+    <rect x="655" y="252" width="66" height="52" rx="10"/>
+    <circle cx="674" cy="274" r="6"/><circle cx="702" cy="274" r="6"/>
+    <path d="M672 292 h32"/>
+    <line x1="688" y1="252" x2="688" y2="232"/><circle class="pk" cx="688" cy="226" r="6"/>
+    <path d="M655 306 v14 M721 306 v14"/>
+    <!-- kid 2 (right, arm raised holding LED) -->
+    <circle cx="790" cy="170" r="40"/>
+    <circle cx="777" cy="166" r="10"/><circle cx="801" cy="166" r="10"/>
+    <path d="M765 143 Q790 120 815 143"/>
+    <path d="M756 210 Q790 232 824 210 L832 330 H748 Z"/>
+    <path d="M752 236 Q712 200 706 150"/>
+    <!-- LED with rays -->
+    <circle class="pk" cx="700" cy="126" r="14"/>
+    <path class="pk" d="M700 100 v-16 M676 108 l-11 -11 M724 108 l11 -11 M672 128 h-16 M728 128 h16"/>
+    <!-- plant with sensor -->
+    <path d="M96 330 v-26 h56 v26"/>
+    <path d="M124 304 Q112 270 124 250 Q140 274 124 304 M124 288 Q104 280 98 262 M124 288 Q146 282 150 264"/>
+    <line class="pk" x1="140" y1="304" x2="140" y2="278"/><circle class="pk" cx="140" cy="273" r="4"/>
+    <!-- sparkles -->
+    <path class="pk" d="M420 150 v20 M410 160 h20 M580 120 v16 M572 128 h16"/>
+  </svg>
+
+  <div class="about-banner reveal">
+    <p class="kick-b">Why IOMinds — <i>the gap we close</i></p>
+    <h2 class="banner-h">From users of tech<br><span>to makers of tech.</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="believe reveal" id="believe"></div>
+    <div class="about-side reveal d1">
+      <p>We teach <b>AI and IoT together, hands-on</b>, on the tools real engineers use — so children go from tapping screens to <b>wiring, coding and training</b> the tech themselves.</p>
+      <div class="owl-note">
+        <img src="assets/hoot-curious.png" alt="">
+        <span>Curiosity over correctness: we reward the kid who asks <b>"what if we connect these wrong?"</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOP -->
+<section id="loop" class="dark" data-nav="dark">
+  <div class="orbit" aria-hidden="true"></div>
+  <div class="shead">
+    <p class="kick">How kids learn —<i>sense · think · act</i></p>
+    <h2 class="sec-h reveal">Every smart thing runs the same loop.</h2>
+  </div>
+  <div class="loop-wrap">
+    <svg class="loop-svg reveal" id="loopSvg" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The IoT loop: sense, think, act, repeat">
+      <rect class="node" x="30" y="40" width="150" height="86" rx="16"/>
+      <rect class="node" x="340" y="40" width="150" height="86" rx="16"/>
+      <rect class="node" x="185" y="280" width="150" height="86" rx="16"/>
+      <path class="wire" d="M180 83 H340"/>
+      <path class="wire d2" d="M415 126 C415 220 335 250 335 300"/>
+      <path class="wire d3" d="M185 323 C90 323 105 200 105 126"/>
+      <circle class="cy" cx="180" cy="83" r="4"/><circle class="cy" cx="340" cy="83" r="4"/>
+      <circle class="cy" cx="335" cy="300" r="4"/><circle class="cy" cx="105" cy="126" r="4"/>
+      <text class="lbl" x="58" y="76">1 · SENSE</text><text x="58" y="100">LDR · soil probe</text>
+      <text class="lbl" x="368" y="76">2 · THINK</text><text x="368" y="100">ESP32 / Arduino</text>
+      <text class="lbl" x="213" y="316">3 · ACT</text><text x="213" y="340">LED · pump · relay</text>
+      <text x="225" y="70" fill="#FF8FA9">data →</text>
+      <text x="428" y="215" fill="#FF8FA9">decide ↓</text>
+      <text x="52" y="215" fill="#FF8FA9">↑ repeat</text>
+    </svg>
+    <div class="rows">
+      <div class="row-i reveal"><span class="n">01</span><div><h3>Sense</h3><p>Kids wire real light and soil sensors — and watch live values change under their hand.</p></div><span class="ar">↗</span></div>
+      <div class="row-i reveal d1"><span class="n">02</span><div><h3>Think</h3><p>Real logic in C++ and Python: <code>if it's dark → turn on</code>. No drag-and-drop shortcuts.</p></div><span class="ar">↗</span></div>
+      <div class="row-i reveal d2"><span class="n">03</span><div><h3>Act</h3><p>LEDs glow, relays click, pumps whirr — code becomes something to point at: <b>"I made that."</b></p></div><span class="ar">↗</span></div>
+      <div class="row-i reveal d3"><span class="n">04</span><div><h3>Learn — the AI layer</h3><p>Training a model to spot a wilted leaf turns a smart thing into an <b>intelligent</b> one.</p></div><span class="ar">↗</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" data-nav="light">
+  <div class="courses-hero reveal" aria-labelledby="courses-title">
+    <div class="course-shell">
+      <aside class="kicker-wrap">
+        <p class="kicker2">Courses</p>
+        <p class="side-note">Pick a track, keep the projects, build confidence through every level.</p>
+      </aside>
+      <div class="main-copy">
+        <div class="eyebrow-pill"><span class="dot"></span> Age-graded learning tracks</div>
+        <h2 class="courses-h" id="courses-title">Three levels.<br>One path: <span class="accent-path">0 <span class="arrow"></span><span class="infinity">∞</span></span></h2>
+        <p class="lead2">Age-graded tracks, each ending with a working build carried home. Every card links to the full curriculum PDF.</p>
+      </div>
+    </div>
+    <div class="track-bar" aria-hidden="true"><span></span><span class="pulse"></span><span></span></div>
+    <div class="floating-card" aria-hidden="true"><span>↗</span><span>3 levels · 1 clear learning path</span></div>
+  </div>
+
+  <div class="stack-zone">
+    <!-- ALPHA -->
+    <article class="ccard reveal">
+      <span class="band"></span>
+      <div>
+        <p class="lv">LEVEL 01 · BASIC</p>
+        <h3 class="title">Alpha <span class="g">α</span></h3>
+        <div class="chips"><span class="chip hi">Ages 6–9</span><span class="chip">10 live sessions</span><span class="chip">Kit included</span></div>
+        <img class="owl" src="assets/hoot-happy.png" alt="">
+      </div>
+      <div class="body">
+        <p>The flagship <b>Junior IoT &amp; AI Engineers</b> journey — from a first LED blink to a first trained AI model, through three builds kids keep.</p>
+        <dl>
+          <dt>Builds</dt><dd>Smart Night Light · Automated Plant Doctor · AI leaf-health classifier</dd>
+          <dt>Tools</dt><dd>ESP32 / Arduino Uno · Tinkercad · Google Teachable Machine</dd>
+          <dt>Capstone</dt><dd>The Grand Demo — two working devices presented to parents</dd>
+        </dl>
+        <details class="classes">
+          <summary>Peek at all 10 classes <span class="tg">＋</span></summary>
+          <div class="ph">
+            <h4>Part 1 · The Smart Night Light</h4>
+            <ul>
+              <li><span class="cn">Class 1</span><span>Hello, World! — what IoT is; blink the first LED</span></li>
+              <li><span class="cn">Class 2</span><span>Sensing the Dark — light sensors; reading live values</span></li>
+              <li><span class="cn">Class 3</span><span>Logic &amp; Decisions — the if-then rule; on only when dark</span></li>
+              <li><span class="cn">Class 4</span><span>The Smart Lamp Build — housing, assembly, auto-on test</span></li>
+            </ul>
+            <h4>Part 2 · The Automated Plant Doctor</h4>
+            <ul>
+              <li><span class="cn">Class 5</span><span>Thirsty Plants — soil moisture: dry soil vs. wet sponge</span></li>
+              <li><span class="cn">Class 6</span><span>Pumps &amp; Relays — small computers control big electricity</span></li>
+              <li><span class="cn">Class 7</span><span>Integration — if soil &lt; 30%, pump for 5 seconds</span></li>
+              <li><span class="cn">Class 8</span><span>Assembly — a real pot; the device cares for the plant</span></li>
+            </ul>
+            <h4>Part 3 · Introduction to AI</h4>
+            <ul>
+              <li><span class="cn">Class 9</span><span>AI Training Day — healthy leaf vs. wilted leaf</span></li>
+              <li><span class="cn">Class 10</span><span>The Grand Demo — prototypes on show + future talk</span></li>
+            </ul>
+          </div>
+        </details>
+        <div class="acts">
+          <a class="pdfbtn magnetic" href="assets/pdf/IOMinds_Alpha_Curriculum.pdf" download data-cur="PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Alpha curriculum PDF
+          </a>
+          <a class="enrol rlink" href="#contact"><span class="rt"><span>Enrol in Alpha →</span><span>Enrol in Alpha →</span></span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- BETA -->
+    <article class="ccard beta reveal">
+      <span class="band"></span>
+      <div>
+        <p class="lv">LEVEL 02 · MEDIUM</p>
+        <h3 class="title">Beta <span class="g">β</span></h3>
+        <div class="chips"><span class="chip hi">Ages 10–12</span><span class="chip">36 sessions · 4–5 months</span><span class="chip">Kit included</span></div>
+        <img class="owl" src="assets/hoot-thinking.png" alt="">
+      </div>
+      <div class="body">
+        <p>The <b>Builders</b> track — real <b>Python, cloud-connected devices and first ML models</b>. Sensor data lands on a phone: dashboards, alerts, remote control.</p>
+        <dl>
+          <dt>Tools</dt><dd>Python · Arduino · ESP32 · Firebase / Blynk · Teachable Machine · PictoBlox</dd>
+          <dt>Projects</dt><dd>IoT weather station · smart door security · gesture-controlled robot</dd>
+          <dt>Capstone</dt><dd>Smart plant-care with mobile alerts, or a gesture-recognising game</dd>
+        </dl>
+        <div class="acts">
+          <a class="pdfbtn magnetic" href="assets/pdf/IOMinds_Beta_Curriculum.pdf" download data-cur="PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Beta curriculum PDF
+          </a>
+          <a class="enrol rlink" href="#contact"><span class="rt"><span>Enrol in Beta →</span><span>Enrol in Beta →</span></span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PRO -->
+    <article class="ccard pro reveal">
+      <span class="band"></span>
+      <div>
+        <p class="lv">LEVEL 03 · ADVANCED</p>
+        <h3 class="title">Pro <span class="g">∞</span></h3>
+        <div class="chips"><span class="chip hi">Ages 13–15</span><span class="chip">48 sessions · 6 months</span><span class="chip">Competition prep</span></div>
+        <img class="owl" src="assets/hoot-awesome.png" alt="">
+      </div>
+      <div class="body">
+        <p>The <b>Innovators</b> track — full-stack IoT, <b>edge AI, custom PCBs and engineering-grade documentation</b>, from breadboard to competition stage.</p>
+        <dl>
+          <dt>Tools</dt><dd>Python · Raspberry Pi · TensorFlow Lite · MQTT · Node-RED · Fritzing · GitHub</dd>
+          <dt>Projects</dt><dd>Air-quality alerts · smart home stack · emotion detector · digit recognition</dd>
+          <dt>Capstone</dt><dd>A deployable innovation ready for ATL Marathon, WRO, or Codeavour</dd>
+        </dl>
+        <div class="acts">
+          <a class="pdfbtn magnetic" href="assets/pdf/IOMinds_Pro_Curriculum.pdf" download data-cur="PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Pro curriculum PDF
+          </a>
+          <a class="enrol rlink" href="#contact"><span class="rt"><span>Enrol in Pro →</span><span>Enrol in Pro →</span></span></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="howitworks" data-nav="light">
+  <div class="blob"></div>
+  <div class="shead">
+    <p class="kick">Classes 1–4 —<i>the first complete build</i></p>
+    <h2 class="sec-h reveal">Anatomy of a first invention.</h2>
+  </div>
+  <div class="nl-grid">
+    <div>
+      <p class="lead reveal" style="margin-top:0">A light sensor reads the room, the ESP32 decides, an LED responds — the whole IoT loop, wired by an eight-year-old.</p>
+      <div class="code-card reveal d1">
+        <span class="c">// the if-then rule, class 3</span><br>
+        <span class="k">if</span> (lightLevel <span class="k">&lt;</span> darkThreshold) {<br>
+        &nbsp;&nbsp;<span class="f">digitalWrite</span>(LED, HIGH); <span class="c">// it's dark → glow</span><br>
+        } <span class="k">else</span> {<br>
+        &nbsp;&nbsp;<span class="f">digitalWrite</span>(LED, LOW);<br>
+        }
+      </div>
+    </div>
+    <svg class="nl-svg reveal" id="nlSvg" viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Room light hits the LDR, the ESP32 decides, the LED lamp glows when dark">
+      <g class="sun">
+        <circle cx="60" cy="60" r="20" fill="none" stroke="#F5A623" stroke-width="2"/>
+        <g stroke="#F5A623" stroke-width="2">
+          <line x1="60" y1="24" x2="60" y2="10"/><line x1="60" y1="96" x2="60" y2="110"/>
+          <line x1="24" y1="60" x2="10" y2="60"/><line x1="96" y1="60" x2="110" y2="60"/>
+          <line x1="34" y1="34" x2="24" y2="24"/><line x1="86" y1="86" x2="96" y2="96"/>
+          <line x1="86" y1="34" x2="96" y2="24"/><line x1="34" y1="86" x2="24" y2="96"/>
+        </g>
+        <text x="34" y="140">room light</text>
+      </g>
+      <rect class="box" x="30" y="180" width="120" height="70" rx="14"/>
+      <text x="52" y="210">LDR sensor</text><text class="pk" x="52" y="230">"how bright?"</text>
+      <rect class="box" x="205" y="170" width="130" height="90" rx="14"/>
+      <text x="240" y="204">ESP32</text><text class="pk" x="224" y="226">if dark → ON</text>
+      <g stroke="#241A38" stroke-width="2">
+        <line x1="215" y1="170" x2="215" y2="160"/><line x1="235" y1="170" x2="235" y2="160"/>
+        <line x1="255" y1="170" x2="255" y2="160"/><line x1="275" y1="170" x2="275" y2="160"/>
+        <line x1="295" y1="170" x2="295" y2="160"/><line x1="315" y1="170" x2="315" y2="160"/>
+      </g>
+      <circle class="glowc" cx="445" cy="205" r="34"/>
+      <circle cx="445" cy="205" r="26" fill="none" stroke="#241A38" stroke-width="2"/>
+      <path d="M432 231 h26 l-5 18 h-16 z" fill="none" stroke="#241A38" stroke-width="2"/>
+      <text x="415" y="285">LED lamp</text>
+      <path class="wire" d="M60 110 C60 150 60 160 70 178"/>
+      <path class="wire" d="M150 215 H205"/>
+      <path class="wire w2" d="M335 215 H417"/>
+      <text class="pk" x="160" y="205">signal</text><text class="pk" x="352" y="205">action</text>
+    </svg>
+  </div>
+</section>
+
+<!-- KIT -->
+<section id="kit" data-nav="light">
+  <div class="shead">
+    <p class="kick">The kit —<i>delivered before class one</i></p>
+    <div>
+      <h2 class="sec-h reveal">What's inside the box.</h2>
+      <p class="lead reveal d1">A professional-grade kit at the doorstep before class one — reusable across the whole project library.</p>
+    </div>
+  </div>
+  <div class="kit-grid">
+    <div class="kit-cell reveal"><span class="ico">🧠</span><h3>ESP32 Microcontroller</h3><p>The brain — Wi-Fi &amp; Bluetooth built in.</p><span class="qty">QTY 1 · THE BRAIN</span></div>
+    <div class="kit-cell reveal d1"><span class="ico">👁️</span><h3>Light Sensor (LDR)</h3><p>The eyes of the Smart Night Light.</p><span class="qty">QTY 1 · SENSE</span></div>
+    <div class="kit-cell reveal d2"><span class="ico">🌱</span><h3>Soil Moisture Sensor</h3><p>Feels whether the soil is thirsty.</p><span class="qty">QTY 1 · SENSE</span></div>
+    <div class="kit-cell reveal"><span class="ico">💡</span><h3>Bright / RGB LED Pack</h3><p>Every build's way of talking back.</p><span class="qty">QTY 1 · ACT</span></div>
+    <div class="kit-cell reveal d1"><span class="ico">💧</span><h3>5V Mini Water Pump</h3><p>Waters the plant while your child sleeps.</p><span class="qty">QTY 1 · ACT</span></div>
+    <div class="kit-cell reveal d2"><span class="ico">🔀</span><h3>Relay Module</h3><p>Lets a tiny controller switch big electricity, safely.</p><span class="qty">QTY 1 · CONTROL</span></div>
+    <div class="kit-cell reveal"><span class="ico">🔌</span><h3>Jumper Wires (M-F)</h3><p>The nervous system of every build.</p><span class="qty">SET · CONNECT</span></div>
+    <div class="kit-cell reveal d1"><span class="ico">🧩</span><h3>Breadboard</h3><p>Build and rebuild — no glue, no solder.</p><span class="qty">QTY 1 · CONNECT</span></div>
+    <div class="kit-cell reveal d2"><span class="ico">🔗</span><h3>USB Cable</h3><p>Uploads their code straight into the invention.</p><span class="qty">QTY 1 · CONNECT</span></div>
+  </div>
+  <p class="kit-note reveal"><img src="assets/hoot-happy.png" alt=""><span><b>Safe &amp; durable:</b> chosen for child safety — no soldering, ever.</span></p>
+</section>
+
+<!-- LAB PHOTO STRIP -->
+<section id="lab" data-nav="light">
+  <div class="shead">
+    <p class="kick">Inside the classes —<i>live, interactive, hands-on</i></p>
+    <h2 class="sec-h reveal">Live mentors. Real projects. Learn from anywhere.</h2>
+  </div>
+  <div class="lab-strip">
+    <figure class="snap reveal"><img src="assets/strip-3.jpg" alt="Four students in live online classes learning AI, IoT, drones and robotics" loading="lazy"><figcaption><b>Live classes</b> — AI · IoT · drones · robotics</figcaption></figure>
+    <figure class="snap reveal d1"><img src="assets/strip-2.jpg" alt="Student in a live online STEM session with mentor and class chat" loading="lazy"><figcaption><b>Interactive sessions</b> — ask, code, build</figcaption></figure>
+    <figure class="snap reveal d2"><img src="assets/strip-1.jpg" alt="Mentor welcoming young innovators to a live online class" loading="lazy"><figcaption><b>Expert mentors</b> — learn from anywhere</figcaption></figure>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="dark" data-nav="dark" style="background:var(--plum-2)">
+  <div class="shead">
+    <p class="kick">Project library —<i>what keeps them building</i></p>
+    <div>
+      <h2 class="sec-h reveal">18 builds and counting.</h2>
+      <p class="lead reveal d1">A mapped project bank across grade levels. Filter by track:</p>
+    </div>
+  </div>
+  <div class="filterbar reveal">
+    <button class="on" data-f="all">All 18</button>
+    <button data-f="jr-iot">Grades 4–5 · IoT</button>
+    <button data-f="jr-ai">Grades 4–5 · AI</button>
+    <button data-f="sr-iot">Grades 6–7 · IoT</button>
+    <button data-f="sr-ai">Grades 6–7 · AI</button>
+  </div>
+  <div class="proj-grid">
+    <div class="proj reveal" data-c="jr-iot"><span class="tag">IoT · 4–5</span><h3>Smart Plant Watering</h3><p>Auto-waters a plant and pings your phone.</p></div>
+    <div class="proj reveal" data-c="jr-iot"><span class="tag">IoT · 4–5</span><h3>IoT Weather Station</h3><p>Streams room temperature &amp; humidity to a phone.</p></div>
+    <div class="proj reveal" data-c="jr-iot"><span class="tag">IoT · 4–5</span><h3>Smart Door Security</h3><p>Alerts when a drawer or door is opened.</p></div>
+    <div class="proj reveal" data-c="jr-iot"><span class="tag">IoT · 4–5</span><h3>Voice-Controlled Lighting</h3><p>LEDs commanded via Alexa or Google Assistant.</p></div>
+    <div class="proj reveal" data-c="jr-ai"><span class="tag">AI · 4–5</span><h3>Gesture Controlled Robot</h3><p>Hand gestures drive a robot car.</p></div>
+    <div class="proj reveal" data-c="jr-ai"><span class="tag">AI · 4–5</span><h3>Face Detection Alarm</h3><p>A model that greets you — or guards your room.</p></div>
+    <div class="proj reveal" data-c="jr-ai"><span class="tag">AI · 4–5</span><h3>Logo Recognition Game</h3><p>Identifies brands shown to the camera.</p></div>
+    <div class="proj reveal" data-c="jr-ai"><span class="tag">AI · 4–5</span><h3>Air Drawing Device</h3><p>Draw on screen by moving a finger — no mouse.</p></div>
+    <div class="proj reveal" data-c="sr-iot"><span class="tag">IoT · 6–7</span><h3>Air Quality Alerts</h3><p>Warns when indoor pollution rises.</p></div>
+    <div class="proj reveal" data-c="sr-iot"><span class="tag">IoT · 6–7</span><h3>Smart Home Control</h3><p>LEDs and fans from a phone or voice.</p></div>
+    <div class="proj reveal" data-c="sr-iot"><span class="tag">IoT · 6–7</span><h3>Smart Trash Bin</h3><p>Ultrasonic sensor says when the bin is full.</p></div>
+    <div class="proj reveal" data-c="sr-iot"><span class="tag">IoT · 6–7</span><h3>Surveillance Camera</h3><p>A Pi camera streams footage — vision basics.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>AI Gesture Controller</h3><p>Hand movements control a sprite or robot.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>Virtual Pet Trainer</h3><p>A model plays with a Scratch pet via gestures.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>Emotion Detector</h3><p>Reads happy, sad or angry from a webcam.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>AI Weather Predictor</h3><p>Local data trains a model to predict temperature.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>Digit Recognition</h3><p>Recognises 0–9 — a gentle intro to neural nets.</p></div>
+    <div class="proj reveal" data-c="sr-ai"><span class="tag">AI · 6–7</span><h3>Sorting Hat AI</h3><p>Classification assigns every student to a house.</p></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" data-nav="light">
+  <div class="stats">
+    <div class="stat reveal"><div class="big"><span data-count="10">0</span></div><p>classes from first blink to first trained AI model</p></div>
+    <div class="stat reveal d1"><div class="big"><span data-count="2">0</span></div><p>working devices every Alpha student carries home</p></div>
+    <div class="stat reveal d2"><div class="big">6–15</div><p>age range across Alpha, Beta and Pro</p></div>
+    <div class="stat reveal d3"><div class="big"><span data-count="1">0</span>M</div><p>young Indians hands-on fluent in AI &amp; IoT by 2035</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" data-nav="light">
+  <img class="big-owl" src="assets/hoot-awesome.png" alt="">
+  <div class="shead">
+    <p class="kick" style="color:#fff">Start here —<i>free trial, real build</i></p>
+    <div>
+      <h2 class="sec-h reveal">Your child's first invention is waiting.</h2>
+      <p class="lead reveal d1">Small batches, real engineers as mentors, a build on the table in session one. Kit, lifetime study material &amp; support, competition updates and certificate — all included.</p>
+    </div>
+  </div>
+  <div class="row">
+    <a class="btn magnetic reveal" href="mailto:hello@iominds.ai?subject=Free%20trial%20class" data-cur="MAIL">Book a free trial class</a>
+    <a class="btn ghost magnetic reveal d1" href="#courses" data-cur="PDF" style="color:#fff">Download a curriculum</a>
+  </div>
+  <span class="mono reveal d2">hello@iominds.ai · Indore, Madhya Pradesh · online cohorts India-wide</span>
+</section>
+
+<!-- FOOTER -->
+<footer data-nav="dark">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo"><img src="assets/logo-dark.png" alt="IOMinds.ai"></div>
+      <p class="foot-tag"><b>&lt;internet of minds&gt;</b><br>Where young minds build tomorrow's tech.<br>0 ·····→···· ∞</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">Why IOMinds</a></li>
+        <li><a href="#courses">Alpha · Beta · Pro</a></li>
+        <li><a href="#kit">The hardware kit</a></li>
+        <li><a href="#projects">Project library</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Curriculum PDFs</h4>
+      <ul>
+        <li><a href="assets/pdf/IOMinds_Alpha_Curriculum.pdf" download>Alpha — Basic (6–9)</a></li>
+        <li><a href="assets/pdf/IOMinds_Beta_Curriculum.pdf" download>Beta — Medium (10–12)</a></li>
+        <li><a href="assets/pdf/IOMinds_Pro_Curriculum.pdf" download>Pro — Advanced (13–15)</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello@iominds.ai">hello@iominds.ai</a></li>
+        <li>Indore, Madhya Pradesh</li>
+        <li><a href="https://instagram.com/iominds.ai" target="_blank" rel="noopener">Instagram</a> · <a href="https://youtube.com/@iominds" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://linkedin.com/company/iominds" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://facebook.com/iominds.ai" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="giant">IOMINDS</div>
+  <div class="foot-bottom">
+    <span>© 2026 IOMinds.ai — Internet of Minds.</span>
+    <span>&lt;internet of minds&gt;</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* preloader */
+const loader=document.getElementById('loader');
+if(reduced){loader.remove();document.body.classList.add('ready');}
+else{
+  const roll=document.getElementById('lroll'),num=document.getElementById('lnum');
+  const lineH=roll.children[0].getBoundingClientRect().height;
+  let p=0,step=0;
+  const t=setInterval(()=>{
+    p=Math.min(100,p+Math.ceil(Math.random()*8));num.textContent=p+'%';
+    const target=Math.min(3,Math.floor(p/28));
+    if(target!==step){step=target;roll.style.transform=`translateY(${-step*lineH}px)`;}
+    if(p>=100){clearInterval(t);
+      setTimeout(()=>{loader.classList.add('done');document.body.classList.add('ready');
+        setTimeout(()=>loader.remove(),900);},420);}
+  },60);
+}
+
+/* split hero headline */
+document.querySelectorAll('[data-split]').forEach(ln=>{
+  const walk=node=>{[...node.childNodes].forEach(ch=>{
+    if(ch.nodeType===3){
+      const frag=document.createDocumentFragment();
+      [...ch.textContent].forEach(c=>{const s=document.createElement('span');
+        s.className='ch';s.textContent=c===' '?'\u00A0':c;frag.appendChild(s);});
+      node.replaceChild(frag,ch);
+    } else walk(ch);});};
+  walk(ln);
+});
+document.querySelectorAll('.hero-h .ch').forEach((c,i)=>c.style.transitionDelay=(.15+i*.028)+'s');
+
+/* custom cursor */
+if(matchMedia('(pointer:fine)').matches&&!reduced){
+  const dot=document.querySelector('.cur-dot'),ring=document.querySelector('.cur-ring'),
+        lbl=ring.querySelector('span');
+  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;
+    dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
+  (function follow(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;
+    ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    requestAnimationFrame(follow);})();
+  document.querySelectorAll('a,button,summary').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{document.body.classList.add('cur-hover');
+      lbl.textContent=el.dataset.cur||'GO';});
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
+  });
+}
+
+/* magnetic buttons */
+if(matchMedia('(pointer:fine)').matches&&!reduced){
+  document.querySelectorAll('.magnetic').forEach(el=>{
+    el.addEventListener('mousemove',e=>{
+      const r=el.getBoundingClientRect(),
+            x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
+      el.style.transform=`translate(${x*.22}px,${y*.28}px)`;
+    });
+    el.addEventListener('mouseleave',()=>el.style.transform='');
+  });
+}
+
+/* nav */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>30),{passive:true});
+const themed=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)
+  nav.classList.toggle('on-dark',e.target.dataset.nav==='dark');});
+},{rootMargin:'-8% 0px -88% 0px'});
+document.querySelectorAll('[data-nav]').forEach(s=>themed.observe(s));
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+/* hero network canvas */
+const cv=document.getElementById('net');
+if(cv&&!reduced){
+  const ctx=cv.getContext('2d');
+  let W,H,pts=[],mouse={x:-9999,y:-9999};
+  const N=()=>Math.min(90,Math.floor(innerWidth/16));
+  function size(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;
+    pts=Array.from({length:N()},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.35*devicePixelRatio,vy:(Math.random()-.5)*.35*devicePixelRatio,
+      c:Math.random()<.22?'#19C2D8':'#E8506E',r:(Math.random()*1.6+1.2)*devicePixelRatio}));}
+  size();addEventListener('resize',size);
+  cv.parentElement.addEventListener('mousemove',e=>{
+    const r=cv.getBoundingClientRect();
+    mouse.x=(e.clientX-r.left)*devicePixelRatio;mouse.y=(e.clientY-r.top)*devicePixelRatio;});
+  cv.parentElement.addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+  const LINK=150*devicePixelRatio;
+  let visible=true;
+  new IntersectionObserver(es=>visible=es[0].isIntersecting).observe(cv);
+  (function tick(){
+    requestAnimationFrame(tick);
+    if(!visible)return;
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
+      if(d<120*devicePixelRatio){p.x+=dx/d*1.4;p.y+=dy/d*1.4;}
+    }
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<LINK){ctx.strokeStyle=`rgba(232,80,110,${(1-d/LINK)*.32})`;
+        ctx.lineWidth=devicePixelRatio;
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+    }
+    for(const p of pts){ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();}
+  })();
+}
+
+/* hero owl parallax */
+const owl=document.getElementById('heroOwl');
+if(owl&&!reduced){
+  addEventListener('mousemove',e=>{
+    const x=(e.clientX/innerWidth-.5)*22,y=(e.clientY/innerHeight-.5)*16;
+    owl.style.transform=`translate(${x}px,${y}px) rotate(${x*.2}deg)`;
+  },{passive:true});
+  addEventListener('scroll',()=>{owl.style.marginTop=scrollY*.22+'px';},{passive:true});
+}
+
+/* reveals */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');
+    if(e.target.id==='loopSvg'||e.target.id==='nlSvg')e.target.classList.add('drawn');
+    io.unobserve(e.target);}
+}),{threshold:.16});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* believe: word-by-word light-up */
+const believeText=[
+ ['Kids use smart devices every day.',0],
+ ['Almost none can build one.',1],
+ ['We\u2019re changing that — one working project at a time.',0]];
+const believeEl=document.getElementById('believe');
+believeText.forEach(([t,hi])=>{t.split(' ').forEach(word=>{
+  const s=document.createElement('span');s.className='w'+(hi?' hi':'');
+  s.textContent=word+' ';believeEl.appendChild(s);});});
+const ws=[...believeEl.querySelectorAll('.w')];
+new IntersectionObserver((es,ob)=>{
+  if(es[0].isIntersecting){ws.forEach((w,i)=>setTimeout(()=>w.classList.add('lit'),i*55));ob.disconnect();}
+},{threshold:.5}).observe(believeEl);
+
+/* counters */
+const ioc=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,end=+el.dataset.count;let cur=0;
+  const step=()=>{cur+=Math.max(1,Math.ceil(end/28));
+    if(cur>=end)el.textContent=end;else{el.textContent=cur;requestAnimationFrame(step);}};
+  step();ioc.unobserve(el);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>ioc.observe(el));
+
+/* project filter */
+document.querySelectorAll('.filterbar button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filterbar button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const f=b.dataset.f;
+  document.querySelectorAll('.proj').forEach(p=>p.classList.toggle('hide',f!=='all'&&p.dataset.c!==f));
+}));
+
+/* service worker — offline caching */
+if('serviceWorker' in navigator){
+  addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>

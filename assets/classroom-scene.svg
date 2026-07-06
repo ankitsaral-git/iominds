@@ -1,0 +1,139 @@
+<svg viewBox="0 0 1600 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F2347"/>
+      <stop offset="1" stop-color="#241A38"/>
+    </linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1129"/>
+      <stop offset="1" stop-color="#2F2347"/>
+    </linearGradient>
+  </defs>
+
+  <!-- wall + floor -->
+  <rect width="1600" height="700" fill="url(#wall)"/>
+  <rect y="560" width="1600" height="140" fill="#1A1129"/>
+  <line x1="0" y1="560" x2="1600" y2="560" stroke="#4A3C6B" stroke-width="3"/>
+
+  <!-- faint window panes -->
+  <g fill="#3B2F55" opacity=".5">
+    <rect x="60" y="70" width="150" height="200" rx="10"/>
+    <rect x="240" y="70" width="150" height="200" rx="10"/>
+  </g>
+
+  <!-- ===== big AI screen on wall ===== -->
+  <rect x="640" y="70" width="380" height="230" rx="16" fill="url(#scr)" stroke="#4A3C6B" stroke-width="4"/>
+  <text x="672" y="118" font-family="monospace" font-size="26" fill="#FF8FA9">AI · neural net</text>
+  <!-- network edges -->
+  <g stroke="#59D9D0" stroke-width="2.5" opacity=".85">
+    <line x1="700" y1="160" x2="810" y2="145"/><line x1="700" y1="160" x2="810" y2="205"/>
+    <line x1="700" y1="230" x2="810" y2="145"/><line x1="700" y1="230" x2="810" y2="205"/>
+    <line x1="700" y1="230" x2="810" y2="262"/>
+    <line x1="810" y1="145" x2="930" y2="180"/><line x1="810" y1="205" x2="930" y2="180"/>
+    <line x1="810" y1="262" x2="930" y2="180"/><line x1="700" y1="160" x2="810" y2="262"/>
+  </g>
+  <!-- network nodes -->
+  <g fill="#E8506E">
+    <circle cx="700" cy="160" r="11"/><circle cx="700" cy="230" r="11"/>
+    <circle cx="810" cy="145" r="11"/><circle cx="810" cy="205" r="11"/><circle cx="810" cy="262" r="11"/>
+    <circle cx="930" cy="180" r="14" fill="#F5A623"/>
+  </g>
+
+  <!-- ===== drone (top right) ===== -->
+  <g>
+    <rect x="1210" y="120" width="120" height="34" rx="16" fill="#E8506E"/>
+    <circle cx="1250" cy="146" r="9" fill="#FBE9DD"/>
+    <line x1="1210" y1="128" x2="1160" y2="104" stroke="#B9AFD2" stroke-width="6" stroke-linecap="round"/>
+    <line x1="1330" y1="128" x2="1380" y2="104" stroke="#B9AFD2" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="1150" cy="100" rx="46" ry="8" fill="#59D9D0"/>
+    <ellipse cx="1390" cy="100" rx="46" ry="8" fill="#59D9D0"/>
+    <!-- signal waves -->
+    <g stroke="#F5A623" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M1270 190 q10 14 0 28"/>
+      <path d="M1290 180 q18 24 0 48"/>
+    </g>
+  </g>
+
+  <!-- ===== robotic arm on pedestal (left of screen) ===== -->
+  <g stroke-linecap="round">
+    <rect x="470" y="470" width="110" height="90" rx="10" fill="#3B2F55"/>
+    <line x1="525" y1="470" x2="500" y2="380" stroke="#B9AFD2" stroke-width="14"/>
+    <line x1="500" y1="380" x2="560" y2="320" stroke="#B9AFD2" stroke-width="12"/>
+    <circle cx="500" cy="380" r="12" fill="#E8506E"/>
+    <circle cx="525" cy="470" r="13" fill="#E8506E"/>
+    <path d="M560 320 l26 -12 M560 320 l28 8" stroke="#F5A623" stroke-width="9"/>
+  </g>
+
+  <!-- ===== desk 1: student at laptop (left) ===== -->
+  <g>
+    <rect x="90" y="470" width="330" height="18" rx="9" fill="#4A3C6B"/>
+    <rect x="110" y="488" width="18" height="90" fill="#3B2F55"/>
+    <rect x="382" y="488" width="18" height="90" fill="#3B2F55"/>
+    <!-- laptop -->
+    <rect x="250" y="380" width="130" height="84" rx="8" fill="#1A1129" stroke="#59D9D0" stroke-width="3"/>
+    <text x="278" y="432" font-family="monospace" font-size="30" fill="#FF8FA9">&lt;/&gt;</text>
+    <path d="M240 470 h150 l12 -6 h-174 z" fill="#B9AFD2"/>
+    <!-- student (side profile, seated) -->
+    <circle cx="170" cy="330" r="34" fill="#B97B56"/>
+    <path d="M136 322 a34 34 0 0 1 62 -14 q-30 -6 -62 14z" fill="#241A38"/>
+    <rect x="136" y="366" width="80" height="104" rx="26" fill="#E8506E"/>
+    <path d="M206 396 q34 18 52 -6" stroke="#B97B56" stroke-width="16" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== desk 2: two students + robot car (center) ===== -->
+  <g>
+    <rect x="1010" y="470" width="360" height="18" rx="9" fill="#4A3C6B"/>
+    <rect x="1030" y="488" width="18" height="90" fill="#3B2F55"/>
+    <rect x="1322" y="488" width="18" height="90" fill="#3B2F55"/>
+    <!-- robot car -->
+    <rect x="1150" y="410" width="96" height="46" rx="12" fill="#59D9D0"/>
+    <circle cx="1172" cy="460" r="14" fill="#1A1129"/>
+    <circle cx="1224" cy="460" r="14" fill="#1A1129"/>
+    <line x1="1198" y1="410" x2="1198" y2="384" stroke="#F5A623" stroke-width="5"/>
+    <circle cx="1198" cy="378" r="7" fill="#F5A623"/>
+    <circle cx="1174" cy="428" r="6" fill="#241A38"/><circle cx="1210" cy="428" r="6" fill="#241A38"/>
+    <!-- student A (kneeling left of desk, controller) -->
+    <circle cx="1080" cy="342" r="32" fill="#F2C6A0"/>
+    <path d="M1048 336 a32 32 0 0 1 60 -12 q-16 -18 -40 -10 q-18 8 -20 22z" fill="#5A3A22"/>
+    <rect x="1048" y="376" width="72" height="94" rx="24" fill="#F5A623"/>
+    <path d="M1116 402 q22 14 36 8" stroke="#F2C6A0" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <!-- student B (right, cheering) -->
+    <circle cx="1310" cy="330" r="32" fill="#8C5A3C"/>
+    <path d="M1278 324 a32 32 0 0 1 64 0 q-10 -22 -34 -22 q-22 0 -30 22z" fill="#241A38"/>
+    <rect x="1276" y="364" width="72" height="106" rx="24" fill="#B57BDA"/>
+    <path d="M1282 384 q-26 -26 -18 -52" stroke="#8C5A3C" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <circle cx="1258" cy="322" r="10" fill="#F5A623"/>
+    <path d="M1258 300 v-14 M1240 308 l-10 -10 M1276 308 l10 -10" stroke="#F5A623" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== student with VR headset (far right) ===== -->
+  <g>
+    <circle cx="1500" cy="330" r="34" fill="#F2C6A0"/>
+    <path d="M1468 318 a34 34 0 0 1 66 -4 q-8 -24 -34 -24 q-26 0 -32 28z" fill="#5A3A22"/>
+    <rect x="1468" y="316" width="66" height="26" rx="12" fill="#E8506E"/>
+    <rect x="1466" y="372" width="76" height="120" rx="26" fill="#59D9D0"/>
+    <path d="M1470 396 q-30 -20 -30 -48" stroke="#F2C6A0" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <g stroke="#FF8FA9" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M1430 320 q-12 12 0 24"/>
+      <path d="M1414 310 q-20 22 0 44"/>
+    </g>
+  </g>
+
+  <!-- ===== plant with soil sensor (front left corner) ===== -->
+  <g>
+    <path d="M560 640 l10 -56 h64 l10 56 z" fill="#3B2F55"/>
+    <path d="M602 584 q-16 -44 0 -74 q20 34 0 74z" fill="#59D9D0"/>
+    <path d="M602 566 q-28 -12 -34 -40 q30 4 34 40z" fill="#2FA89F"/>
+    <path d="M602 566 q28 -12 34 -40 q-30 4 -34 40z" fill="#2FA89F"/>
+    <line x1="626" y1="584" x2="626" y2="548" stroke="#E8506E" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="626" cy="540" r="8" fill="#E8506E"/>
+  </g>
+
+  <!-- floating sparkles -->
+  <g stroke="#FF8FA9" stroke-width="5" stroke-linecap="round">
+    <path d="M470 150 v26 M457 163 h26"/>
+    <path d="M1080 90 v20 M1070 100 h20"/>
+  </g>
+  <circle cx="540" cy="230" r="6" fill="#59D9D0"/>
+  <circle cx="1120" cy="250" r="6" fill="#F5A623"/>
+</svg>
