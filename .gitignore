@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Internal brand/strategy source material — this repo is public and serves the
+# live site. The brand document carries pricing rationale, refund internals and
+# the "Section B" roadmap that is explicitly founders-only.
+reference-docs/
+
+# Read-only mirror of the local master projects overview (never committed)
+MASTER_PROJECTS_OVERVIEW.local.md
