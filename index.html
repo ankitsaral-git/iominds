@@ -193,6 +193,11 @@ nav.solid{background:rgba(255,255,255,.9);backdrop-filter:blur(14px);color:var(-
 nav.solid.on-dark{background:rgba(7,12,33,.88);color:var(--mist);box-shadow:0 1px 0 var(--line-d)}
 nav .logo{display:flex;align-items:center;gap:11px}
 nav .logo .mark{font-size:38px}
+/* Logo artwork is used as-is from assets/logo-*.png: fix the height, let width follow the file */
+nav .logo-img{height:40px;width:auto;display:block}
+nav .logo-on-light{display:none}
+nav.solid:not(.on-dark) .logo-on-dark{display:none}
+nav.solid:not(.on-dark) .logo-on-light{display:block}
 nav .logo .wm{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.035em;line-height:1;display:block}
 nav .logo .wm .io{color:var(--teal)}
 nav .logo .wm .ai{color:var(--blue-soft)}
@@ -657,6 +662,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
 .foot-grid li a:hover{color:var(--teal)}
 .foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .foot-logo .mark{font-size:52px}
+.foot-logo-img{height:56px;width:auto;display:block}
 .foot-logo .wm{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.035em;line-height:1;display:block}
 .foot-logo .wm .io{color:var(--teal)}
 .foot-logo .wm .ai{color:var(--blue-soft)}
@@ -697,6 +703,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
   nav{padding:10px var(--pad)}
   nav .logo .tg{display:none}
   nav .logo .mark{font-size:32px}
+  nav .logo-img{height:34px}
   nav .logo .wm{font-size:18px}
   nav .btn{padding:11px 15px;font-size:11px}
   nav .links{display:none}
@@ -768,11 +775,8 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
 
 <nav id="nav" class="on-dark">
   <a class="logo" href="#top" data-cur="HOME" aria-label="IOMinds.ai — home">
-    <svg class="mark" aria-hidden="true"><use href="#chipmark"/></svg>
-    <span>
-      <span class="wm"><span class="io">IO</span>Minds<span class="ai">.ai</span></span>
-      <span class="tg">&lt; internet of minds /&gt;</span>
-    </span>
+    <img class="logo-img logo-on-dark" src="assets/logo-dark.png" width="1200" height="277" alt="">
+    <img class="logo-img logo-on-light" src="assets/logo-light.png" width="1200" height="277" alt="">
   </a>
   <div class="links" id="navLinks">
     <a class="rlink" href="#about"><span class="rt"><span>Why IOMinds</span><span>Why IOMinds</span></span></a>
@@ -792,7 +796,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
 <header id="top" data-nav="dark">
   <canvas id="net" aria-hidden="true"></canvas>
   <div class="glow g1"></div><div class="glow g2"></div>
-  <svg class="hero-mark mark" id="heroMark" role="img" aria-label="The IOMinds chip mark — an infinity loop drawn as a circuit"><use href="#chipmark"/></svg>
+  <img class="hero-mark mark" id="heroMark" src="assets/logo-mark.png" width="512" height="512" alt="The IOMinds chip mark — an infinity loop drawn as a circuit">
   <div class="hero-in">
     <span class="kicker"><span class="dot"></span>&lt; internet of minds /&gt; · hands-on AI + IoT · ages 8–14</span>
     <h1 class="hero-h">
@@ -879,7 +883,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
       <p>The name is a deliberate evolution of <b>Internet of Things</b> — swapping <i>Things</i> for <i>Minds</i>. The next great network isn't made of devices; it's made of the young minds who will imagine and build them.</p>
       <p>We teach <b>AI and IoT together, hands-on</b>, on the tools real engineers use — Arduino, Raspberry Pi, Bluetooth, MQTT, Node-RED, Python — in live cohorts of <b>5–6 students per mentor</b>.</p>
       <div class="note-card">
-        <svg class="mark" aria-hidden="true"><use href="#chipmark"/></svg>
+        <img class="mark" src="assets/logo-mark.png" width="512" height="512" alt="">
         <span>Curiosity over correctness: we reward the child who asks <b>"what happens if we connect these wrong?"</b></span>
       </div>
     </div>
@@ -1176,7 +1180,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
     <div class="kit-cell reveal d1" data-j="builders"><span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 10h5M6 14h9"/></svg></span><h3>16×2 LCD display</h3><p>Readings leave the laptop and live on the device.</p><span class="qty">BUILDERS · DISPLAY</span></div>
     <div class="kit-cell reveal d2" data-j="innovators"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8 15.5a5.5 5.5 0 0 1 8 0"/><circle cx="12" cy="19" r="1.4"/></svg></span><h3>ESP8266 WiFi &amp; Raspberry Pi</h3><p>Where the loop leaves the room: cloud, dashboards, phone alerts.</p><span class="qty">INNOVATORS · CONNECT</span></div>
   </div>
-  <p class="kit-note reveal"><svg class="mark" aria-hidden="true"><use href="#chipmark"/></svg><span><b>Safe &amp; durable:</b> low-voltage, child-safe components — no soldering, ever.</span></p>
+  <p class="kit-note reveal"><img class="mark" src="assets/logo-mark.png" width="512" height="512" alt=""><span><b>Safe &amp; durable:</b> low-voltage, child-safe components — no soldering, ever.</span></p>
 </section>
 
 <!-- HOW THE CLASSES RUN -->
@@ -1276,11 +1280,7 @@ footer{background:var(--navy-2);color:var(--mist);padding:64px var(--pad) 28px}
   <div class="foot-grid">
     <div>
       <div class="foot-logo">
-        <svg class="mark" aria-hidden="true"><use href="#chipmark"/></svg>
-        <span>
-          <span class="wm"><span class="io">IO</span>Minds<span class="ai">.ai</span></span>
-          <span class="tg">&lt; internet of minds /&gt;</span>
-        </span>
+        <img class="foot-logo-img" src="assets/logo-dark.png" width="1200" height="277" alt="IOMinds.ai — internet of minds">
       </div>
       <p class="foot-tag"><b>Where young minds build tomorrow's tech.</b><br>AI + IoT learning for young makers<br>0 ·····→···· ∞</p>
     </div>
