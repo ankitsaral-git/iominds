@@ -1,0 +1,47 @@
+schema: 1
+id: iominds
+name: IOMinds.ai
+folder: PROJ_IOMINDS
+status: live
+summary: >-
+  Landing site for IOMinds.ai — AI + IoT training for children 8–14 (Indore and online).
+  Single-page PWA on GitHub Pages; the repo must stay public (GitHub Free Pages).
+
+repo:
+  url: github.com/ankitsaral-git/iominds
+  visibility: public
+  prod_branch: main
+  work_branch: rebrand
+
+environments:
+  prod:
+    url: https://iominds.ai
+    hosting: GitHub Pages (custom apex)
+    deploy: git push main
+
+modules:
+  - name: "index.html"
+    purpose: "hero, journeys (Sparks/Builders/Innovators), fees, kit, project library"
+    status: "live"
+  - name: "sw.js"
+    purpose: "PWA cache (bump CACHE_VERSION on shell change)"
+    status: "live"
+  - name: "rebrand branch"
+    purpose: "v1.4 rebrand"
+    status: "partial"
+    notes: "not pushed or merged"
+
+depends_on:
+  projects: []
+  services: [service:github-pages, service:google-fonts]
+
+provides:
+  resources: [domain:iominds.ai]
+
+risks:
+  - severity: "high"
+    text: "TLS broken — apex serves *.github.io cert; re-add custom domain and enforce HTTPS"
+  - severity: "medium"
+    text: "Push/merge v1.4 rebrand; no lead capture or analytics"
+
+docs: [PROJ_IOMINDS_master.md (frozen archive)]
