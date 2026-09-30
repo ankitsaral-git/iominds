@@ -1,6 +1,6 @@
 /* IOMinds.ai service worker — offline caching
    Bump CACHE_VERSION whenever the precached shell changes to force an update. */
-const CACHE_VERSION = 'iominds-v3';
+const CACHE_VERSION = 'iominds-v4';
 const PRECACHE = `${CACHE_VERSION}-precache`;
 const RUNTIME = `${CACHE_VERSION}-runtime`;
 
@@ -18,17 +18,10 @@ const PRECACHE_URLS = [
   'assets/icons/favicon-32x32.png',
   'assets/icons/favicon-48x48.png',
   'assets/icons/favicon-180x180.png',
-  'assets/hoot-happy.png',
-  'assets/hoot-awesome.png',
-  'assets/hoot-curious.png',
-  'assets/hoot-thinking.png',
-  'assets/hoot-emotions.gif',
+  'assets/logo-mark.png',
+  'assets/logo-light.png',
   'assets/logo-dark.png',
-  'assets/lab-bright.jpg',
-  'assets/lab-online.jpg',
-  'assets/strip-1.jpg',
-  'assets/strip-2.jpg',
-  'assets/strip-3.jpg',
+  'assets/og-card.jpg',
   'assets/icons/icon-192.png',
   'assets/icons/icon-512.png',
   'assets/icons/icon-maskable-512.png',
