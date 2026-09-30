@@ -1,0 +1,68 @@
+# Read-only CI checks. Runs on pull requests and on demand only — never on push, so it
+# can never deploy anything (GitHub Pages publishes main by itself; this workflow has no
+# Pages permissions). No secrets, read-only token.
+name: checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Internal link check (lychee, offline)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # --offline: local files only. --root-dir resolves root-relative links (/sw.js)
+          # against the repo root, which is the Pages root.
+          args: >-
+            --offline --no-progress
+            --root-dir ${{ github.workspace }}
+            --fallback-extensions html
+            index.html
+          fail: true
+
+      - name: JSON-LD blocks parse as JSON
+        shell: python3 {0}
+        run: |
+          import json, re, sys
+          pat = re.compile(r'<script\b[^>]*type\s*=\s*["\']?application/ld\+json["\']?[^>]*>(.*?)</script>', re.I | re.S)
+          blocks = bad = 0
+          for m in pat.finditer(open("index.html", encoding="utf-8").read()):
+              blocks += 1
+              try:
+                  json.loads(m.group(1))
+              except json.JSONDecodeError as e:
+                  bad += 1
+                  print(f"::error file=index.html::JSON-LD block does not parse: {e}")
+          print(f"index.html: {blocks} JSON-LD blocks, {bad} invalid")
+          sys.exit(1 if bad else 0)
+
+      - name: Service worker syntax (node --check sw.js)
+        run: node --check sw.js
+
+      - name: Service worker CACHE_VERSION is a non-empty string
+        shell: python3 {0}
+        run: |
+          import re, sys
+          m = re.search(r"""^\s*const\s+CACHE_VERSION\s*=\s*(['"`])(.*?)\1""", open("sw.js", encoding="utf-8").read(), re.M)
+          if not m or not m.group(2).strip():
+              print("::error file=sw.js::CACHE_VERSION must be a non-empty string literal")
+              sys.exit(1)
+          print(f"CACHE_VERSION={m.group(2)}")
+
+      # Advisory only: ~13 pre-existing findings (inline styles, implicit button type).
+      - name: HTML validation (advisory)
+        continue-on-error: true
+        run: npx --yes html-validate@11 index.html
