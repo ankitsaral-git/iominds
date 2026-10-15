@@ -6,5 +6,9 @@
 # the "Section B" roadmap that is explicitly founders-only.
 reference-docs/
 
+# Key project documents (brand guide, master data). Local only for the same reason:
+# GitHub Pages would publish them. See the root CLAUDE.md › master_docs.
+master_docs/
+
 # Read-only mirror of the local master projects overview (never committed)
 MASTER_PROJECTS_OVERVIEW.local.md
